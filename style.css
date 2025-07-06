@@ -1,24 +1,30 @@
+/* Reset básico */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
   background-color: #f4f6f8;
   color: #333;
+  line-height: 1.6;
+  padding: 10px;
 }
 
 .container {
-  max-width: 900px;
+  max-width: 100%;
+  width: 100%;
   margin: auto;
-  padding: 20px;
+  padding: 15px;
 }
 
 h1 {
   text-align: center;
   color: #2b5797;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
 .summary {
@@ -26,36 +32,44 @@ h1 {
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
 .summary p {
-  margin: 5px;
+  margin: 5px 0;
+  font-size: 1rem;
 }
 
 .search-add {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 input[type="text"],
 input[type="number"],
 select {
-  padding: 8px;
-  width: 200px;
-  margin-right: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
 }
 
 button {
-  padding: 8px 12px;
+  padding: 10px 15px;
+  font-size: 1rem;
   cursor: pointer;
   background-color: #2b5797;
   color: white;
   border: none;
   border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #1f4377;
 }
 
 table {
@@ -63,23 +77,45 @@ table {
   border-collapse: collapse;
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow-x: auto;
+  margin-bottom: 20px;
 }
 
 th, td {
-  padding: 10px;
+  padding: 12px 8px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  min-width: 100px;
 }
 
-.low-stock {
-  color: red;
-  font-weight: bold;
+td button {
+  display: block;
+  width: 100%;
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 600px) {
+  .search-add {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  th, td {
+    white-space: nowrap;
+  }
+
+  td button {
+    display: inline-block;
+    width: auto;
+    margin: 0 4px;
+  }
 }
 
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
@@ -93,8 +129,14 @@ th, td {
   margin: 15% auto;
   padding: 20px;
   border-radius: 8px;
-  width: 350px;
+  width: 90%;
+  max-width: 400px;
   position: relative;
+}
+
+.modal-content h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
 }
 
 .modal-content span {
@@ -107,7 +149,14 @@ th, td {
 
 .modal-content label {
   display: block;
-  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content button {
+  width: 100%;
+  margin-top: 5px;
 }
 
 .toast {
