@@ -1,0 +1,29 @@
+{
+  "name": "daily-control-ipv",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build:next": "next build",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev"
+  },
+  "dependencies": {
+    "next": "^15.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@prisma/client": "^6.7.0",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "eslint": "^9.25.0",
+    "eslint-config-next": "^15.3.0",
+    "prisma": "^6.7.0",
+    "typescript": "^5.8.3"
+  }
+}

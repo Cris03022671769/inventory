@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm run build",
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "DATABASE_URL_UNPOOLED": "@database_url_unpooled"
+  }
+}
